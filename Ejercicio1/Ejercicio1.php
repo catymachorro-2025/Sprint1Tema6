@@ -1,3 +1,6 @@
+<?php 
+require_once 'LogicaSuperglobales.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +29,8 @@
 
             <button type="submit" class="form-submit">Enviar</button>
         </form>
-
-<?php 
-
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $username_post = isset($_POST["username"]) ? $_POST["username"] : ''; 
-    $email_post = isset($_POST["email"]) ? $_POST["email"] : '';
-    $contrasena_post = isset($_POST["contrasena"]) ? $_POST["contrasena"] : ''; 
-
-    $_SESSION["username"] = $username_post;
-    $_SESSION["email"] = $_SESSION["email"] = $email_post;
-    $_SESSION["contrasena"] = $contrasena_post;
-    
+        <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "
     <hr>
     <h2>Datos Guardados:</h2>
@@ -49,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Email: " . $_SESSION["email"] . "
     Contraseña: ". $_SESSION ["contrasena"] ."
     </pre>";
-}
-?>
+    }
+     ?>
     </div>
 </body>
 </html>
