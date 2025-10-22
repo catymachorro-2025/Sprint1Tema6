@@ -27,7 +27,7 @@ require_once 'LogicaSuperglobales.php';
                 <input type="password" id="contrasena" name="contrasena" required> 
             </div>
 
-            <button type="submit" class="form-submit">Enviar</button>
+            <button type="submit"  class="form-submit">Enviar</button>
         </form>
         <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
